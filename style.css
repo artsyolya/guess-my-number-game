@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+      135deg,
+      rgba(131, 58, 180, 0.8) 0%,
+      rgba(253, 29, 29, 0.8) 50%
+    ),
+    rgba(252, 176, 69, 0.8) 100%;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+/* Layout */
+main {
+  width: 95%;
+  max-width: 100rem;
+  height: 60rem;
+  background-color: rgba(252, 252, 252, 0.4);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.player {
+  width: 50%;
+  text-align: center;
+  opacity: 0.7;
+}
+.name {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 10rem;
+}
+.score {
+  font-size: 7rem;
+  color: rgb(40, 67, 216);
+  margin-top: 1rem;
+}
+.current {
+  width: 20rem;
+  margin: auto;
+  background-color: rgba(40, 67, 216, 0.7);
+  border-radius: 1rem;
+  color: white;
+  padding: 1.5rem 3rem;
+  margin-top: 13rem;
+}
+.current-label {
+  font-size: 2rem;
+}
+.current-score {
+  font-size: 4rem;
+}
+.player--active {
+  background-color: rgba(252, 252, 252, 0.6);
+  border-radius: 10px;
+  opacity: 1;
+}
+.player--active .current {
+  background-color: rgba(40, 67, 216, 0.9);
+}
+.player--winner {
+  background-color: rgba(40, 67, 216, 0.8);
+  border-radius: 10px;
+  opacity: 1;
+}
+.player--winner .name,
+.player--winner .score {
+  color: white;
+}
+.player--winner .current {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(40, 67, 216);
+}
+.dice {
+  width: 12rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+.btn {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.7rem 3rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.btn--new {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn--roll {
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn--hold {
+  top: 77%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn:active {
+  transform: translateY(-50%, 3px);
+}
+.hidden {
+  display: none;
+}
+
+/********************************************** 
+  Mobile styling 
+***********************************************/
+@media only screen and (max-width: 540px) {
+  main {
+    overflow: initial;
+    height: 35%;
+    margin-bottom: 25rem;
+  }
+  .name {
+    margin-top: 0;
+    padding-top: 1rem;
+    font-size: 2.5rem;
+  }
+  .score {
+    font-size: 5rem;
+    margin-top: 0;
+  }
+  .current {
+    width: 13rem;
+    margin-top: 2.5rem;
+    padding: 1rem 0;
+  }
+  .current-label {
+    font-size: 1.4rem;
+  }
+  .current-score {
+    font-size: 3rem;
+  }
+  .dice {
+    top: 114%;
+  }
+  .btn {
+    position: fixed;
+    font-size: 1.4rem;
+    padding: 1rem 2.2rem;
+  }
+  .btn--new {
+    top: -34%;
+  }
+  .btn--roll {
+    top: 178%;
+  }
+  .btn--hold {
+    top: 200%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  main {
+    margin-bottom: 23rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  main {
+    margin-bottom: 20rem;
+  }
+  .dice {
+    top: 108%;
+  }
+  .btn--new {
+    top: -34%;
+  }
+  .btn--roll {
+    top: 170%;
+  }
+  .btn--hold {
+    top: 197%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  main {
+    height: 30%;
+    margin-bottom: 20rem;
+  }
+  .name {
+    font-size: 2rem;
+  }
+  .score {
+    font-size: 4rem;
+  }
+  .current {
+    width: 10rem;
+  }
+  .current-label {
+    font-size: 1.3rem;
+  }
+  .current-score {
+    font-size: 2rem;
+  }
+  .dice {
+    top: 112%;
+  }
+  .btn {
+    font-size: 1.3rem;
+  }
+  .btn--new {
+    top: -43%;
+  }
+  .btn--roll {
+    top: 187%;
+  }
+  .btn--hold {
+    top: 220%;
+  }
+}
